@@ -5,20 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Sign up form</title>
 </head>
 <body>
     <div class="main-container">
-        <img src="bitcoin-logo.jpg" alt="bitcoin-logo">
+        <div class="logo-title">
+            <img src="bitcoin-logo.jpg" alt="bitcoin-logo">
+                <p class="company-name">Odin Coin</p>
+                <p class="photo-credit">Photo by 
+                <a href="https://unsplash.com/@silverhousehd" class="author-name">André François McKenzie</a> on <a href="https://unsplash.com/" class="src-site">Unsplash</a></p>
+        </div>
         <div class="form-container">
-            <h2>This is not a real online service./n It might become real one day!</h2>
-            <p><strong>Sign up now and buy your first <em>Bitcoin</em></strong></p>
+            <h2 class="intro">This is not a real online service.<br> It might become real one day!</h2>
+            <p class="intro parag"><strong>Sign up now and buy your first <em>Bitcoin</em></strong></p>
 
             <form action="" method="post">
+                
                 
                 <div class="form-row">
                     <label for="first_name">FIRST NAME</label>
                     <input type="text" name="first_name" id="first_name" required>
+                    
                 </div>                
 
                 <div class="form-row">
@@ -35,26 +43,30 @@
 
                 <div class="form-row">
                     <label for="phone">PHONE NUMBER</label>
-                    <input type="tel" id="phone" name="user_phone" required>
+                    <input type="tel" id="phone" name="user_phone" pattern="[0-9]{5,}" required>
                 </div>
 
                 <div class="form-row">
                     <label for="pwd">PASSWORD</label>
-                    <input type="password" name="user_password" id="pwd" required>
+                    <input type="password"
+                    name="user_password" 
+                    id="pwd" 
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" 
+                    required>
                 </div>
 
                 <div class="form-row">
-                    <label for="pwd">CONFIRM PASSWORD</label>
-                    <input type="password" name="user_password" id="pwd" required>
-                </div>
-                
+                    <label for="verify-pwd">CONFIRM PASSWORD</label>
+                    <input type="password" name="user_password" id="verify-pwd" required>
+                    <span class="match-pwd"></span>
+                </div>               
                 <div class="submit-btn">
                     <button type="submit">Create Account</button>
-                </div>
-               
+                    <p class="login-text">Already have an account? <a href="#" class="login-page">Log In</a></p> 
+                </div>                            
             </form>
-        
         </div>
+        
     </div>
     
 </html>
